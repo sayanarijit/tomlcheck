@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "tomlcheck"
+version = "0.1.0"
+description = "A simple toml syntax checker"
+authors = ["Arijit Basu <sayanarijit@gmail.com>"]
+license = "MIT"
+classifiers = [
+	"Programming Language :: Python :: 3.6",
+	"Programming Language :: Python :: 3.7",
+	"Programming Language :: Python :: 3.8",
+]
+homepage = "http://github.com/sayanarijit/tomlcheck"
+repository = "http://github.com/sayanarijit/tomlcheck"
+keywords = ["toml"]
+packages = [
+	{ include = "tomlcheck" },
+]
+
+[tool.poetry.scripts]
+tomlcheck = "tomlcheck.run:run"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+toml = "^0.10.0"
+pytest-cov = "^2.8.1"
+
+[tool.poetry.dev-dependencies]
+isort = "^4.3.21"
+mypy = "^0.770"
+black = "^19.10b0"
+flake8 = "^3.7.9"
+pytest = "^5.4.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
