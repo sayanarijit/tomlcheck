@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tomlcheck"
-version = "0.1.0"
+version = "0.1.1"
 description = "A simple toml syntax checker"
 authors = ["Arijit Basu <sayanarijit@gmail.com>"]
 license = "MIT"
@@ -15,6 +15,7 @@ keywords = ["toml"]
 packages = [
 	{ include = "tomlcheck" },
 ]
+readme = "README.rst"
 
 [tool.poetry.scripts]
 tomlcheck = "tomlcheck.run:run"
