@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tomlcheck"
-version = "0.1.1"
+version = "0.1.2"
 description = "A simple toml syntax checker"
 authors = ["Arijit Basu <sayanarijit@gmail.com>"]
 license = "MIT"

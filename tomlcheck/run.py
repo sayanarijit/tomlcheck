@@ -15,8 +15,6 @@ def run() -> None:
         choices=[x.value for x in LogLevels],
         default=LogLevels.warning.value,
     )
-    parser.add_argument("--force-single-thread", action="store_true")
-    parser.add_argument("--max-thread-workers", type=int, default=10)
 
     args = parser.parse_args()
 

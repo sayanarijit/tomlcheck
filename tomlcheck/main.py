@@ -24,21 +24,6 @@ def check(filepath: str) -> None:
     logging.info(f"{filepath}: OK")
 
 
-def check_multi_thread(*files: str, max_workers: int = 0):
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-
-    pool = ThreadPoolExecutor(max_workers=max_workers)
-    for task in as_completed([pool.submit(check, x) for x in files]):
-        task.result()
-
-
-def check_single_thread(*files: str):
-    list(map(check, files))
-
-
 def main(args: Namespace) -> int:
-    if args.force_single_thread or len(args.files) < 10:
-        check_single_thread(*args.files)
-    else:
-        check_multi_thread(*args.files, max_workers=args.max_workers)
+    list(map(check, args.files))
     return 0
