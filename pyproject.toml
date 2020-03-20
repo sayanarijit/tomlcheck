@@ -5,13 +5,14 @@ description = "A simple toml syntax checker"
 authors = ["Arijit Basu <sayanarijit@gmail.com>"]
 license = "MIT"
 classifiers = [
+	"Topic :: Software Development",
 	"Programming Language :: Python :: 3.6",
 	"Programming Language :: Python :: 3.7",
 	"Programming Language :: Python :: 3.8",
 ]
 homepage = "http://github.com/sayanarijit/tomlcheck"
 repository = "http://github.com/sayanarijit/tomlcheck"
-keywords = ["toml"]
+keywords = ["toml", "toml-validation", "pre-commit", "pre-commit-hooks"]
 packages = [
 	{ include = "tomlcheck" },
 ]

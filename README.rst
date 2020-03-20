@@ -22,7 +22,9 @@ tomlcheck
     :alt:
 
 
-A simple toml syntax checker
+A simple toml syntax checker.
+
+Designed to be used by `pre-commit <https://github.com/pre-commit/pre-commit>`_ hooks.
 
 
 Installation
@@ -36,9 +38,33 @@ Installation
 Usage
 -----
 
+Check files:
+
 .. code-block:: bash
 
-    tomlcheck /path/to/file1.toml /path/to/file2.toml
+    tomlcheck $(find . -type f -name "*.toml")
+
+With logging:
+
+.. code-block:: bash
+
+    tomlcheck --log-level DEBUG $(find . -type f -name "*.toml")
+
+In `pre-commit <https://github.com/pre-commit/pre-commit>`_ config:
+
+.. code-block:: yaml
+
+    # .pre-commit-config.yaml
+
+    - repo: local
+      hooks:
+      - id: tomlcheck
+        name: Check TOML Syntax
+        description: Checks TOML files for valid syntax.
+        entry: tomlcheck
+        language: system
+        files: \**/*.toml$
+        stages: [commit, push, manual]
 
 
 Help Menu
