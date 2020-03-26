@@ -44,11 +44,20 @@ Check files:
 
     tomlcheck $(find . -type f -name "*.toml")
 
+    # Or read from stdin
+
+    find . -type f -name "*.toml" | tomlcheck -
+
+
 With logging:
 
 .. code-block:: bash
 
     tomlcheck --log-level DEBUG $(find . -type f -name "*.toml")
+    
+    # Or read from stdin
+
+    find . -type f -name "*.toml" | tomlcheck --log-level DEBUG -
 
 In `pre-commit <https://github.com/pre-commit/pre-commit>`_ config:
 

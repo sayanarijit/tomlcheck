@@ -13,17 +13,21 @@ class LogLevels(Enum):
     critical = "CRITICAL"
 
 
-def check(filepath: str) -> None:
+def check(filepath: str) -> bool:
     """Check a single file."""
 
-    logging.debug(f"Checking {filepath}...")
+    logging.debug(filepath, extra=dict(status="checking"))
 
-    with open(filepath) as f:
-        toml.load(f)
+    try:
+        with open(filepath) as f:
+            toml.load(f)
+    except toml.TomlDecodeError as err:
+        logging.error(filepath, extra=dict(status=err.msg))
+        return False
 
-    logging.info(f"{filepath}: OK")
+    logging.info(filepath, extra=dict(status="ok"))
+    return True
 
 
 def main(args: Namespace) -> int:
-    list(map(check, args.files))
-    return 0
+    return 0 if all(list(map(check, args.files))) else 1
