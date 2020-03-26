@@ -10,7 +10,7 @@ def run() -> None:
     parser = ArgumentParser("tomlcheck", description=__description__)
     parser.add_argument("files", nargs="*")
     parser.add_argument(
-        "-", "--stdin", action="store_true", help="read input from stdin."
+        "-", "--stdin", action="store_true", help="read input from stdin"
     )
     parser.add_argument("--version", action="version", version=__version__)
     parser.add_argument(
