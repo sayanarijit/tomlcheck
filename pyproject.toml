@@ -28,7 +28,7 @@ toml = "^0.10.0"
 [tool.poetry.dev-dependencies]
 isort = "*"
 mypy = "*"
-black = "^19.10b0"
+black = "^20.8b0"
 flake8 = "*"
 pytest = "*"
 pytest-cov = "*"
