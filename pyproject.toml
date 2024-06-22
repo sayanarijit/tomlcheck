@@ -1,14 +1,12 @@
 [tool.poetry]
 name = "tomlcheck"
-version = "0.2.2"
+version = "0.2.3"
 description = "A simple toml syntax checker"
 authors = ["Arijit Basu <sayanarijit@gmail.com>"]
 license = "MIT"
 classifiers = [
 	"Topic :: Software Development",
-	"Programming Language :: Python :: 3.6",
-	"Programming Language :: Python :: 3.7",
-	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python",
 ]
 homepage = "http://github.com/sayanarijit/tomlcheck"
 repository = "http://github.com/sayanarijit/tomlcheck"
@@ -28,7 +26,7 @@ toml = "^0.10.0"
 [tool.poetry.dev-dependencies]
 isort = "*"
 mypy = "*"
-black = "^19.10b0"
+black = "*"
 flake8 = "*"
 pytest = "*"
 pytest-cov = "*"
